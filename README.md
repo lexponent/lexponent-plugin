@@ -32,11 +32,20 @@ Both skills retrieve from the Ruly rule corpus through the bundled **Ruly connec
 /plugin install ruly@ruly
 ```
 
+> **Note:** Add the marketplace via the GitHub shorthand shown above (or a git URL), not a direct link to `marketplace.json` — relative plugin paths only resolve when the marketplace is added from git. In `/plugin install ruly@ruly`, the first `ruly` is the plugin name and the second is the marketplace name (they happen to share the identifier).
+
 Then authorize the Ruly connector when prompted.
 
 ## Authentication & privacy
 
 The Ruly connector authenticates with **OAuth** — you sign in once and authorize access; no API keys or tokens are stored in this repository. When you use these skills, your questions and the rule text retrieved are sent to the Ruly MCP server at `https://www.askruly.com` to find and cite the relevant rules.
+
+## Updates
+
+This plugin uses pinned semantic versions, so a new release is only delivered after its version is bumped. To pull the latest version after an update is published:
+
+- **Claude desktop / web / Cowork:** Customize → Plugins → Ruly → Update.
+- **Claude Code:** `/plugin update ruly@ruly`.
 
 ## License
 

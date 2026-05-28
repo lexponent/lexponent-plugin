@@ -1,6 +1,6 @@
 {
   "name": "ruly",
-  "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Ruly rule corpus.",
+  "description": "The official Ruly plugin for Claude — court-rule Q&A and filing checklists, grounded in cited rule text.",
   "owner": { "name": "Ruly" },
   "plugins": [
     {
