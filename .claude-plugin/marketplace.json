@@ -1,0 +1,11 @@
+{
+  "name": "ruly",
+  "owner": { "name": "Ruly" },
+  "plugins": [
+    {
+      "name": "ruly",
+      "source": "./",
+      "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Ruly rule corpus."
+    }
+  ]
+}
