@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Ruly": {
+      "type": "http",
+      "url": "https://www.askruly.com/api/mcp"
+    }
+  }
+}
