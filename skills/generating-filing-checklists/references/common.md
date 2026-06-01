@@ -35,3 +35,15 @@ Service and Filing Deadlines
 Proof of Service
 
 These are starter sections — extend or replace as the rules demand for the specific filing.
+
+## Concept grep bank
+
+Run every line below against **every** in-scope document with `Ruly:grep_rules` (case-insensitive POSIX regex; batch within a line, one call per documentId, walk `has_more`). These are the universal concepts; the class file adds more. This is a floor — add terms for anything specific to the filing. Breadth is free: grep returns only matching rules, and this is the step that catches the one-line and cross-document requirements semantic search misses.
+
+- Paper/layout: `paper|opaque|unglazed|inch|margin|spac|line.?number|paginat|footer|caption|bind|fasten|staple|rider|legib`
+- Font: `font|typeface|type size|point|black|blue`
+- Signature: `signature|sign|perjury|verif`
+- Privacy: `redact|confidential|social security|financial account|privacy|under seal`
+- Service & filing time: `serv(e|ed|ice)|proof of service|by mail|overnight|express mail|facsimile|electronic serv|court day|days before|deadline|extend`
+- Citation/authority: `citation|style manual|bluebook|judicial notice|official report`
+- Electronic filing: `electronic|e-fil|PDF|searchable|bookmark|envelope|signature`

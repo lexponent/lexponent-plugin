@@ -30,3 +30,13 @@ Use this file when the filing class is a motion or noticed application.
 - Tentative Ruling / Hearing Procedure (conditional)
 
 These lists are research hints, not output templates. Sub-categories and items in the actual checklist emerge from the rules retrieved for the specific filing in the specific jurisdiction.
+
+## Concept grep bank (motion-specific)
+
+Run these against **every** in-scope document with `Ruly:grep_rules`, in addition to the common bank in `common.md`. Floor, not ceiling — add terms for the specific motion type (e.g. for a cost motion, `cost|tax|memorandum of costs`).
+
+- Notice & motion papers: `notice of motion|grounds|relief|moving papers`
+- Memorandum: `memorand|points and authorities|page limit|exceed|reply|closing|table of (contents|authorities)|summary of argument`
+- Evidence & support: `declaration|affidavit|exhibit|deposition|lodg|translat|request for judicial notice`
+- Hearing & ruling: `tentative|oral (argument|testimony)|appear|continu`
+- Order & conference: `proposed order|\[?proposed\]? order|meet.?and.?confer|conf(er|erence)`

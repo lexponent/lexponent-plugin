@@ -90,17 +90,22 @@ Identify the filing class from the filing type. The keywords below are common ex
 - appellate-level filings ("brief on appeal", "opening brief", "respondent's brief", "petition for writ to an appellate court") → confirm the in-scope corpus covers appellate practice; if it doesn't, flag and ask the user
 - default → **motion**
 
-Read `references/common.md` (research areas universal across all filings) and `references/<class>.md` (class-specific) before researching. Class files currently available: `motion.md`, `pleading.md`, `default-package.md`, `discovery-request.md`. For other classes, use `common.md` plus general knowledge of the filing. The references list research areas and starter output sections — they are research hints, not output templates; extend or replace as the rules demand.
+Read `references/common.md` (research areas universal across all filings) and `references/<class>.md` (class-specific) before researching. Class files currently available: `motion.md`, `pleading.md`, `default-package.md`, `discovery-request.md`. For other classes, use `common.md` plus general knowledge of the filing. The references list research areas, starter output sections, and a concept grep bank — treat the areas and bank as a floor to cover, not a fixed template; extend them as the rules demand.
 
 Treat the dimensions as a research frame: for each category, query the rule corpus and capture any rules that impose a requirement. A category may yield several rules, one, or none. For each retrieved rule, place each requirement under the category it addresses — a single rule may contribute items to multiple categories. If a requirement doesn't fit any category, the frame is missing a category; extend it. Stop when every category has been checked.
 
-Use the three retrieval MCPs in combination:
+Use the retrieval MCPs as a **discovery sweep**, not spot lookups. Recall — not extraction — is the bottleneck: once a rule comes back from the corpus it almost always lands in the checklist, so the whole job is making sure every requirement actually comes back.
 
-- `Ruly:search_rules` — semantic matches; surfaces rules that address a concept without the obvious keyword.
-- `Ruly:grep_rules` — POSIX regex against rule body text; verifies wording or confirms a concept appears in a specific document.
-- `Ruly:find_rule_by_title` — follow cross-references; when a retrieved rule cites another rule by number or section, look it up.
+**Work one document at a time.** Treat the in-scope `documentId`s as an explicit list and give each its own pass before moving on. Coverage is then a countable list — every document gets a pass — rather than a fuzzy sweep, and every call stays scoped to one document, so results come back inline instead of overflowing into a side-file you never read.
 
-`Ruly:search_rules` returns top-N per query and won't enumerate the full corpus alone. `Ruly:grep_rules` searches one document per call — for any concept, issue parallel calls across all in-scope documents (one per documentId) in the same turn. Walk `has_more` / `next_cursor` through every page when matches are likely. Each in-scope document is a separate corpus and each enumeration category requires independent coverage; partial sweeps produce checklists that silently omit requirements from un-searched documents.
+For each document:
+
+1. **Grep it against the concept bank.** `common.md` ends with a **Concept grep bank** — regex terms for requirements that recur across filings — and some class files add a class-specific bank. Run the bank against this document with `Ruly:grep_rules` as a few grouped patterns (one per concept area — layout, signatures, service, …); don't glue the whole bank into a single alternation, which matches so many rules the result overflows. Walk `has_more`. Grep returns only matching rules, so it cheaply surfaces the easy-to-miss one-liners (a font-color rule sitting between font-size and margins) and the local-rule echo of a state rule that semantic search skips. The bank is a **floor, not a ceiling**: add terms for anything specific to this filing.
+2. **Add `Ruly:search_rules`** for concepts whose wording the bank might miss, scoped to this one document. Single-document scope keeps the full-text results inline; a multi-document search returns up to ten full rules per document and overflows into a side-file. If a call overflows anyway, narrow and re-run — never fall back to working from memory.
+3. **Follow cross-references with `Ruly:find_rule_by_title`** — only to pull a rule named in something you already retrieved. It is lookup, not discovery; never seed it from rule numbers you happen to remember, or coverage caps at what you already know.
+4. **Capture each requirement** under the category it addresses (one rule may feed several) before moving to the next document.
+
+**Optional — parallelize across documents.** The per-document pass above is self-contained, so if a subagent/Task tool is available you may run the documents concurrently instead of in sequence: dispatch one subagent per in-scope document, each performing the same pass and **returning** its requirement list as text (return it — don't rely on file paths). Then merge the lists: drop true duplicates, but keep a state rule and its local-rule echo as separate lines, and preserve every citation verbatim. This is an optimization keyed on whether the tool exists, not a requirement — the sequential pass is the default, and the merge must not drop anything.
 
 ## Final action
 
