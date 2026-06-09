@@ -13,7 +13,7 @@ Both skills retrieve from the Ruly rule corpus through the bundled **Ruly connec
 |---|---|
 | `skills/answering-rule-questions/` | Rule Q&A skill |
 | `skills/generating-filing-checklists/` | Filing checklist skill + class reference files |
-| `.mcp.json` | The Ruly connector (`https://www.askruly.com/api/mcp`) |
+| `.mcp.json` | The Ruly connector (`https://mcp.askruly.com/mcp`) |
 | `.claude-plugin/` | Plugin + marketplace manifests |
 
 ## Install
@@ -38,7 +38,7 @@ Then authorize the Ruly connector when prompted.
 
 ## Authentication & privacy
 
-The Ruly connector authenticates with **OAuth** — you sign in once and authorize access; no API keys or tokens are stored in this repository. When you use these skills, your questions and the rule text retrieved are sent to the Ruly MCP server at `https://www.askruly.com` to find and cite the relevant rules.
+The Ruly connector authenticates with **OAuth** — you sign in once and authorize access; no API keys or tokens are stored in this repository. When you use these skills, your questions and the rule text retrieved are sent to the Ruly MCP server at `https://mcp.askruly.com` to find and cite the relevant rules.
 
 ## Updates
 

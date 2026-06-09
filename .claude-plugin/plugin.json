@@ -1,7 +1,7 @@
 {
   "name": "ruly",
   "displayName": "Ruly — Court Rules Assistant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Ruly rule corpus.",
   "author": { "name": "Ruly" },
   "license": "MIT",
