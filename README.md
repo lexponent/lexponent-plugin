@@ -23,12 +23,14 @@ Ask Claude in plain language — the right skill activates automatically.
 
 > **Requirement:** Ruly needs a Ruly account. The connector signs you in via OAuth the first time you use it — if you don't have an account yet, create one at [askruly.com](https://www.askruly.com) before installing.
 
-### Claude desktop / web / Cowork
+### Claude desktop / web
 
-1. Open **Customize Claude → Plugins**.
-2. Click **+ → Create plugin → Add marketplace → Add from a repository**, paste this repo's URL (`https://github.com/ppetrick/ruly-plugin`), and click **Sync**.
-3. Click **Browse plugins**, find "Ruly — Court Rules Assistant", and click **Install**.
-4. When prompted, **authorize the Ruly connector** (one-time OAuth sign-in).
+1. Open **Customize**.
+2. In **Personal Plugins**, click **+ → Create plugin → Add marketplace → Add from a repository**, paste this repo's URL (`https://github.com/ppetrick/ruly-plugin`), and click **Sync**.
+3. Next to "Ruly — Court Rules Assistant", click **+**.
+4. Click **Gear icon → Connectors → Install** (next to Ruly), then **Add**.
+5. **Connect** and sign in with your Ruly account.
+6. Choose **Always Allow** for all tools.
 
 ### Claude Code
 
