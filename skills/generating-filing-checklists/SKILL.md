@@ -11,11 +11,11 @@ Produce a checklist of every requirement a filing of this type could need to sat
 
 Before retrieving any rules, determine the documents in scope.
 
-1. Call `Ruly:list_rulesets` to see all available rulesets, each with a `label` and `description`.
+1. Call `Lexponent:list_rulesets` to see all available rulesets, each with a `label` and `description`.
 2. If the user named specific jurisdictions, courts, or rule bodies (e.g., "LA Superior", "FRCP", "California CCP"), match them to ruleset labels and descriptions. If scope isn't stated, ask the user.
-3. Call `Ruly:list_documents` with `rulesetIds: [...]` for the matched rulesets. The response includes each document's `id` (use this in subsequent calls) and `citationFormat` (use this when composing citation labels).
+3. Call `Lexponent:list_documents` with `rulesetIds: [...]` for the matched rulesets. The response includes each document's `id` (use this in subsequent calls) and `citationFormat` (use this when composing citation labels).
 
-Use the returned `id`s for all later `Ruly:search_rules`, `Ruly:grep_rules`, `Ruly:find_rule_by_title`, and `Ruly:cite` calls.
+Use the returned `id`s for all later `Lexponent:search_rules`, `Lexponent:grep_rules`, `Lexponent:find_rule_by_title`, and `Lexponent:cite` calls.
 
 ## Output format
 
@@ -62,7 +62,7 @@ Example:
 - [ ] [Condition: service by mail within California] 16-court-day period is increased by 5 calendar days. [(Code Civ. Proc., § 1005(b))](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-code-ccp.pdf#page=804)
 ```
 
-The **Documents** header lists the rule documents the checklist is based on (these define the jurisdiction). Sub-categories emerge from the rules, not a fixed taxonomy. If a rule offers a choice (e.g., "Times New Roman or Arial"), include both. Conditional rules apply to both Formatting and Content; flag with `[Condition: triggering choice]` at the start of the item — never omit on the assumption the choice doesn't apply. Use the `Ruly:cite` MCP tool to produce verified citation links.
+The **Documents** header lists the rule documents the checklist is based on (these define the jurisdiction). Sub-categories emerge from the rules, not a fixed taxonomy. If a rule offers a choice (e.g., "Times New Roman or Arial"), include both. Conditional rules apply to both Formatting and Content; flag with `[Condition: triggering choice]` at the start of the item — never omit on the assumption the choice doesn't apply. Use the `Lexponent:cite` MCP tool to produce verified citation links.
 
 ## What's in scope
 
@@ -100,9 +100,9 @@ Use the retrieval MCPs as a **discovery sweep**, not spot lookups. Recall — no
 
 For each document:
 
-1. **Grep it against the concept bank.** `common.md` ends with a **Concept grep bank** — regex terms for requirements that recur across filings — and some class files add a class-specific bank. Run the bank against this document with `Ruly:grep_rules` as a few grouped patterns (one per concept area — layout, signatures, service, …); don't glue the whole bank into a single alternation, which matches so many rules the result overflows. Walk `has_more`. Grep returns only matching rules, so it cheaply surfaces the easy-to-miss one-liners (a font-color rule sitting between font-size and margins) and the local-rule echo of a state rule that semantic search skips. The bank is a **floor, not a ceiling**: add terms for anything specific to this filing.
-2. **Add `Ruly:search_rules`** for concepts whose wording the bank might miss, scoped to this one document. Single-document scope keeps the full-text results inline; a multi-document search returns up to ten full rules per document and overflows into a side-file. If a call overflows anyway, narrow and re-run — never fall back to working from memory.
-3. **Follow cross-references with `Ruly:find_rule_by_title`** — only to pull a rule named in something you already retrieved. It is lookup, not discovery; never seed it from rule numbers you happen to remember, or coverage caps at what you already know.
+1. **Grep it against the concept bank.** `common.md` ends with a **Concept grep bank** — regex terms for requirements that recur across filings — and some class files add a class-specific bank. Run the bank against this document with `Lexponent:grep_rules` as a few grouped patterns (one per concept area — layout, signatures, service, …); don't glue the whole bank into a single alternation, which matches so many rules the result overflows. Walk `has_more`. Grep returns only matching rules, so it cheaply surfaces the easy-to-miss one-liners (a font-color rule sitting between font-size and margins) and the local-rule echo of a state rule that semantic search skips. The bank is a **floor, not a ceiling**: add terms for anything specific to this filing.
+2. **Add `Lexponent:search_rules`** for concepts whose wording the bank might miss, scoped to this one document. Single-document scope keeps the full-text results inline; a multi-document search returns up to ten full rules per document and overflows into a side-file. If a call overflows anyway, narrow and re-run — never fall back to working from memory.
+3. **Follow cross-references with `Lexponent:find_rule_by_title`** — only to pull a rule named in something you already retrieved. It is lookup, not discovery; never seed it from rule numbers you happen to remember, or coverage caps at what you already know.
 4. **Capture each requirement** under the category it addresses (one rule may feed several) before moving to the next document.
 
 **Optional — parallelize across documents.** The per-document pass above is self-contained, so if a subagent/Task tool is available you may run the documents concurrently instead of in sequence: dispatch one subagent per in-scope document, each performing the same pass and **returning** its requirement list as text (return it — don't rely on file paths). Then merge the lists: drop true duplicates, but keep a state rule and its local-rule echo as separate lines, and preserve every citation verbatim. This is an optimization keyed on whether the tool exists, not a requirement — the sequential pass is the default, and the merge must not drop anything.

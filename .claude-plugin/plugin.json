@@ -1,12 +1,12 @@
 {
-  "name": "ruly-plugin",
-  "displayName": "Ruly — Court Rules Assistant",
-  "version": "0.1.2",
-  "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Ruly rule corpus.",
-  "author": { "name": "Ruly" },
+  "name": "lexponent-plugin",
+  "displayName": "Lexponent — Court Rules & Statutes Assistant",
+  "version": "0.2.0",
+  "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Lexponent rule corpus.",
+  "author": { "name": "Lexponent" },
   "license": "MIT",
-  "homepage": "https://www.askruly.com",
-  "repository": "https://github.com/ppetrick/ruly-plugin",
+  "homepage": "https://www.lexponent.ai",
+  "repository": "https://github.com/ppetrick/lexponent-plugin",
   "keywords": ["legal", "court-rules", "litigation", "citations"],
   "mcpServers": "./.mcp.json"
 }

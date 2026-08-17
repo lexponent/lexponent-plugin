@@ -1,11 +1,11 @@
-# Ruly — Court Rules Assistant (Claude plugin)
+# Lexponent — Court Rules & Statutes Assistant (Claude plugin)
 
-Ruly helps attorneys, paralegals, and legal assistants work with jurisdiction-specific court rules and statutes inside Claude. This plugin bundles two skills and the Ruly connector:
+Lexponent helps attorneys, paralegals, and legal assistants work with jurisdiction-specific court rules and statutes inside Claude. This plugin bundles two skills and the Lexponent connector:
 
 - **`/answering-rule-questions`** — answers a specific procedural question by retrieving and citing relevant rule text.
 - **`/generating-filing-checklists`** — produces a comprehensive formatting-and-content checklist for a court filing, with verified citations.
 
-Both skills retrieve from the Ruly rule corpus through the bundled **Ruly connector** (a remote MCP server). Every citation is grounded in a real rule document.
+Both skills retrieve from the Lexponent rule corpus through the bundled **Lexponent connector** (a remote MCP server). Every citation is grounded in a real rule document.
 
 ## Usage
 
@@ -21,25 +21,25 @@ Ask Claude in plain language — the right skill activates automatically.
 
 ## Install
 
-> **Requirement:** Ruly needs a Ruly account. The connector signs you in via OAuth the first time you use it — if you don't have an account yet, create one at [askruly.com](https://www.askruly.com) before installing.
+> **Requirement:** Lexponent needs a Lexponent account. The connector signs you in via OAuth the first time you use it — if you don't have an account yet, create one at [lexponent.ai](https://www.lexponent.ai) before installing.
 
 ### Claude desktop / web
 
 1. Open **Customize**.
-2. In **Personal Plugins**, click **+ → Create plugin → Add marketplace → Add from a repository**, paste this repo's URL (`https://github.com/ppetrick/ruly-plugin`), and click **Sync**.
-3. Next to "Ruly — Court Rules Assistant", click **+**.
-4. Click **Gear icon → Connectors → Install** (next to Ruly), then **Add**.
-5. **Connect** and sign in with your Ruly account.
+2. In **Personal Plugins**, click **+ → Create plugin → Add marketplace → Add from a repository**, paste this repo's URL (`https://github.com/ppetrick/lexponent-plugin`), and click **Sync**.
+3. Next to "Lexponent — Court Rules & Statutes Assistant", click **+**.
+4. Click **Gear icon → Connectors → Install** (next to Lexponent), then **Add**.
+5. **Connect** and sign in with your Lexponent account.
 6. Choose **Always Allow** for all tools.
 
 ### Claude Code
 
 ```
-/plugin marketplace add ppetrick/ruly-plugin
-/plugin install ruly-plugin@ruly
+/plugin marketplace add ppetrick/lexponent-plugin
+/plugin install lexponent-plugin@lexponent
 ```
 
-Then authorize the Ruly connector when prompted.
+Then authorize the Lexponent connector when prompted.
 
 ## License
 

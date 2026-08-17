@@ -33,7 +33,7 @@ These lists are research hints, not output templates. Sub-categories and items i
 
 ## Concept grep bank (motion-specific)
 
-Run these against **every** in-scope document with `Ruly:grep_rules`, in addition to the common bank in `common.md`. Floor, not ceiling — add terms for the specific motion type (e.g. for a cost motion, `cost|tax|memorandum of costs`).
+Run these against **every** in-scope document with `Lexponent:grep_rules`, in addition to the common bank in `common.md`. Floor, not ceiling — add terms for the specific motion type (e.g. for a cost motion, `cost|tax|memorandum of costs`).
 
 - Notice & motion papers: `notice of motion|grounds|relief|moving papers`
 - Memorandum: `memorand|points and authorities|page limit|exceed|reply|closing|table of (contents|authorities)|summary of argument`

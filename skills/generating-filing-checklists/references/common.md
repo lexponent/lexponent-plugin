@@ -38,7 +38,7 @@ These are starter sections — extend or replace as the rules demand for the spe
 
 ## Concept grep bank
 
-Run every line below against **every** in-scope document with `Ruly:grep_rules` (case-insensitive POSIX regex; batch within a line, one call per documentId, walk `has_more`). These are the universal concepts; the class file adds more. This is a floor — add terms for anything specific to the filing. Breadth is free: grep returns only matching rules, and this is the step that catches the one-line and cross-document requirements semantic search misses.
+Run every line below against **every** in-scope document with `Lexponent:grep_rules` (case-insensitive POSIX regex; batch within a line, one call per documentId, walk `has_more`). These are the universal concepts; the class file adds more. This is a floor — add terms for anything specific to the filing. Breadth is free: grep returns only matching rules, and this is the step that catches the one-line and cross-document requirements semantic search misses.
 
 - Paper/layout: `paper|opaque|unglazed|inch|margin|spac|line.?number|paginat|footer|caption|bind|fasten|staple|rider|legib`
 - Font: `font|typeface|type size|point|black|blue`

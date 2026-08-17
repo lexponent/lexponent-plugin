@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "Ruly": {
+    "Lexponent": {
       "type": "http",
-      "url": "https://mcp.askruly.com/mcp"
+      "url": "https://mcp.lexponent.ai/mcp"
     }
   }
 }

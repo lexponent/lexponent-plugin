@@ -1,12 +1,12 @@
 {
-  "name": "ruly",
-  "description": "The official Ruly plugin for Claude — court-rule Q&A and filing checklists, grounded in cited rule text.",
-  "owner": { "name": "Ruly" },
+  "name": "lexponent",
+  "description": "The official Lexponent plugin for Claude — court-rule Q&A and filing checklists, grounded in cited rule text.",
+  "owner": { "name": "Lexponent" },
   "plugins": [
     {
-      "name": "ruly-plugin",
+      "name": "lexponent-plugin",
       "source": "./",
-      "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Ruly rule corpus."
+      "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Lexponent rule corpus."
     }
   ]
 }
