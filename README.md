@@ -26,11 +26,11 @@ Ask Claude in plain language — the right skill activates automatically.
 ### Claude desktop / web
 
 1. Open **Customize**.
-2. In **Personal Plugins**, click **+ → Create plugin → Add marketplace → Add from a repository**, paste this repo's URL (`https://github.com/ppetrick/lexponent-plugin`), and click **Sync**.
+2. Click **Plugins → Add → Add marketplace → Add from a repository**, paste `ppetrick/lexponent-plugin`, and click **Sync**.
 3. Next to "Lexponent — Court Rules & Statutes Assistant", click **+**.
 4. Click **Gear icon → Connectors → Install** (next to Lexponent), then **Add**.
 5. **Connect** and sign in with your Lexponent account.
-6. Choose **Always Allow** for all tools.
+6. Return to the Lexponent Connector and choose **Always Allow** for all tools.
 
 ### Claude Code
 
