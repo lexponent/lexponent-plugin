@@ -49,17 +49,17 @@ Example:
 ## Formatting
 
 ### Margins
-- [ ] Left margin is at least 1 inch. [(Cal. R. Ct. 2.107)](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-2.pdf#page=8)
+- [ ] Left margin is at least 1 inch. [(Cal. R. Ct. 2.107)](https://lexponent-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-2.pdf#page=8)
 
 ### Memorandum Page Limits
-- [ ] Opening memorandum does not exceed 15 pages. [(Cal. R. Ct. 3.1113(d))](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-3.pdf#page=171)
-- [ ] [Condition: memorandum exceeds 10 pages] Memorandum includes a table of contents and table of authorities. [(Cal. R. Ct. 3.1113(f))](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-3.pdf#page=171)
+- [ ] Opening memorandum does not exceed 15 pages. [(Cal. R. Ct. 3.1113(d))](https://lexponent-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-3.pdf#page=171)
+- [ ] [Condition: memorandum exceeds 10 pages] Memorandum includes a table of contents and table of authorities. [(Cal. R. Ct. 3.1113(f))](https://lexponent-rule-documents.s3.us-east-1.amazonaws.com/ca-crc-title-3.pdf#page=171)
 
 ## Content
 
 ### Service and Filing Deadlines
-- [ ] Moving and supporting papers are served and filed at least 16 court days before the hearing. [(Code Civ. Proc., § 1005(b))](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-code-ccp.pdf#page=804)
-- [ ] [Condition: service by mail within California] 16-court-day period is increased by 5 calendar days. [(Code Civ. Proc., § 1005(b))](https://ruly-rule-documents.s3.us-east-1.amazonaws.com/ca-code-ccp.pdf#page=804)
+- [ ] Moving and supporting papers are served and filed at least 16 court days before the hearing. [(Code Civ. Proc., § 1005(b))](https://lexponent-rule-documents.s3.us-east-1.amazonaws.com/ca-code-ccp.pdf#page=804)
+- [ ] [Condition: service by mail within California] 16-court-day period is increased by 5 calendar days. [(Code Civ. Proc., § 1005(b))](https://lexponent-rule-documents.s3.us-east-1.amazonaws.com/ca-code-ccp.pdf#page=804)
 ```
 
 The **Documents** header lists the rule documents the checklist is based on (these define the jurisdiction). Sub-categories emerge from the rules, not a fixed taxonomy. If a rule offers a choice (e.g., "Times New Roman or Arial"), include both. Conditional rules apply to both Formatting and Content; flag with `[Condition: triggering choice]` at the start of the item — never omit on the assumption the choice doesn't apply. Use the `Lexponent:cite` MCP tool to produce verified citation links.

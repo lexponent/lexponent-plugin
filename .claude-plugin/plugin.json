@@ -1,7 +1,7 @@
 {
   "name": "lexponent-plugin",
   "displayName": "Lexponent — Court Rules & Statutes Assistant",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Answer court-rule questions and generate filing checklists, grounded in cited rule text from the Lexponent rule corpus.",
   "author": { "name": "Lexponent" },
   "license": "MIT",
