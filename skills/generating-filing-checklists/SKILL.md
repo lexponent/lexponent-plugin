@@ -11,8 +11,8 @@ Produce a checklist of every requirement a filing of this type could need to sat
 
 Before retrieving any rules, determine the documents in scope.
 
-1. Call `Lexponent:list_rulesets` to see all available rulesets, each with a `label` and `description`.
-2. If the user named specific jurisdictions, courts, or rule bodies (e.g., "LA Superior", "FRCP", "California CCP"), match them to ruleset labels and descriptions. If scope isn't stated, ask the user.
+1. Determine the sovereign of the matter: `fed` for federal court, or the two-letter state code (e.g. `ca`, `ny`, `tx`). If it isn't stated or clear from the matter, ask the user.
+2. Call `Lexponent:list_rulesets` with `sovereign`. It returns every ruleset in that sovereign, each with a `label`, `description`, `tier` (`code`, `reg`, `high`, `appellate`, `trial`) and `division` (e.g. "Ninth Circuit"). Match the user's court to the court-tier rulesets by label. The `code` rulesets apply across the sovereign (rules of procedure, evidence code, substantive codes); include the ones relevant to the question.
 3. Call `Lexponent:list_documents` with `rulesetIds: [...]` for the matched rulesets. The response includes each document's `id` (use this in subsequent calls) and `citationFormat` (use this when composing citation labels).
 
 Use the returned `id`s for all later `Lexponent:search_rules`, `Lexponent:grep_rules`, `Lexponent:find_rule_by_title`, and `Lexponent:cite` calls.
