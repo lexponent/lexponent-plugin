@@ -6,7 +6,7 @@
   "author": { "name": "Lexponent" },
   "license": "MIT",
   "homepage": "https://www.lexponent.ai",
-  "repository": "https://github.com/ppetrick/lexponent-plugin",
+  "repository": "https://github.com/lexponent/lexponent-plugin",
   "keywords": ["legal", "court-rules", "litigation", "citations"],
   "mcpServers": "./.mcp.json"
 }
